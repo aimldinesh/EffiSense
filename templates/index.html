@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Use url_for so Flask serves the static file correctly -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>EffiSense – Machine Efficiency Predictor</title>
+</head>
+
+<body>
+    <!-- Main heading -->
+    <h1>EffiSense</h1>
+
+    <!-- Sub-heading / instructions -->
+    <p class="form-intro">
+        Enter the machine parameters to predict efficiency status.
+    </p>
+
+    <!-- =====================  FORM  ===================== -->
+    <form method="POST">
+        {% for feature in features %}
+            <div class="form-group">
+                <label for="{{ feature }}">{{ feature.replace('_', ' ') }}:</label>
+
+                {# -------- Operation_Mode dropdown -------- #}
+                {% if feature == "Operation_Mode" %}
+                    <select name="{{ feature }}" id="{{ feature }}" required>
+                        <option value="0">Active</option>
+                        <option value="1">Idle</option>
+                        <option value="2">Maintenance</option>
+                    </select>
+
+                {# -------- Year dropdown (2023-2030) -------- #}
+                {% elif feature == "Year" %}
+                    <select name="{{ feature }}" id="{{ feature }}">
+                        {% for y in range(2023, 2031) %}
+                            <option value="{{ y }}"
+                                {% if default_values.Year == y %}selected{% endif %}>
+                                {{ y }}
+                            </option>
+                        {% endfor %}
+                    </select>
+
+                {# -------- Month dropdown -------- #}
+                {% elif feature == "Month" %}
+                    <select name="{{ feature }}" id="{{ feature }}">
+                        {% for m in range(1, 13) %}
+                            <option value="{{ m }}"
+                                {% if default_values.Month == m %}selected{% endif %}>
+                                {{ m }}
+                            </option>
+                        {% endfor %}
+                    </select>
+
+                {# -------- Day dropdown -------- #}
+                {% elif feature == "Day" %}
+                    <select name="{{ feature }}" id="{{ feature }}">
+                        {% for d in range(1, 32) %}
+                            <option value="{{ d }}"
+                                {% if default_values.Day == d %}selected{% endif %}>
+                                {{ d }}
+                            </option>
+                        {% endfor %}
+                    </select>
+
+                {# -------- Hour dropdown (0-23) -------- #}
+                {% elif feature == "Hour" %}
+                    <select name="{{ feature }}" id="{{ feature }}">
+                        {% for h in range(0, 24) %}
+                            <option value="{{ h }}"
+                                {% if default_values.Hour == h %}selected{% endif %}>
+                                {{ "{:02d}".format(h) }}
+                            </option>
+                        {% endfor %}
+                    </select>
+
+                {# -------- All other numeric inputs -------- #}
+                {% else %}
+                    <input type="text" name="{{ feature }}" id="{{ feature }}" required />
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <button type="submit">🔮 Predict</button>
+    </form>
+    <!-- ===================  END FORM  =================== -->
+
+    <!-- Prediction result -->
+    {% if prediction %}
+        <h2 class="result">Prediction: {{ prediction }}</h2>
+    {% endif %}
+
+    <!-- Error message -->
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
