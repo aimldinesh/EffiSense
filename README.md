@@ -36,26 +36,33 @@ It features a fully automated CI/CD setup using **Jenkins**, **ArgoCD**, **Docke
 ## 🏛️ Project Structure
 ```
 EffiSense/
-├── app.py                  # Flask app with prediction logic
+│
 ├── src/
-│   ├── data_processing.py   # Preprocessing pipeline
-│   ├── model_training.py    # Model training & evaluation
-│   ├── logger.py
-│   └── custom_exception.py
-├── templates/
-│   └── index.html          # Flask frontend template
-├── static/
-│   └── style.css           # Web UI styling
-├── manifests/
-│   ├── deployment.yml
-│   └── service.yml
+│   ├── data_processing.py     # Preprocessing logic
+│   ├── model_training.py      # Training and evaluation
+│   ├── logger.py              # Custom logger
+│   └── custom_exception.py    # Custom error handler
+│
+├── pipeline/
+│   └── training_pipeline.py   # Main ML workflow script
+│
 ├── artifacts/
-│   ├── raw/data.csv
-│   ├── processed/*.pkl
-│   └── models/*.pkl
-├── Dockerfile
-├── Jenkinsfile
-└── README.md
+│   ├── raw/data.csv           # Input dataset
+│   ├── processed/             # Scaled and encoded data
+│   └── models/                # Trained model and metrics
+│
+├── templates/index.html       # Web UI template
+├── static/style.css           # Web UI styles
+├── app.py                     # Flask web app
+│
+├── Dockerfile                 # Docker image config
+├── manifests/
+│   ├── deployment.yml         # Kubernetes deployment
+│   └── service.yml            # Kubernetes service
+│
+├── Jenkinsfile                # Jenkins CI/CD pipeline
+└── README.md                  # Project documentation
+
 ```
 ---
 
@@ -218,8 +225,9 @@ EffiSense applies a supervised ML model to classify machine efficiency as **High
    - Evaluated on `X_test`, `y_test`
    - Metrics: Accuracy, Precision, Recall, F1-score
    - Results saved to `evaluation_metrics.csv`
+   
 
-### 📁 Model Artifacts
+### 💾 Saved Model Artifacts
 ```
 artifacts/
 ├── raw/
@@ -236,43 +244,78 @@ artifacts/
 
 ```
 ---
+### 🧪 Sample Evaluation Metrics
+
+Here are the evaluation metrics of the trained Logistic Regression model on the test dataset:
+
+| Metric     | Value     |
+|------------|-----------|
+| Accuracy   | 91.66%    |
+| Precision  | 91.50%    |
+| Recall     | 91.66%    |
+| F1-Score   | 91.56%    |
+---
 
 ## 🚀 CI/CD Pipeline
 
-EffiSense uses a robust CI/CD pipeline to automate the build, test, and deployment process using **Jenkins** and **ArgoCD**.
+EffiSense features a fully automated **CI/CD pipeline** that ensures fast, reliable, and reproducible ML model deployment. It leverages:
 
-The pipeline is divided into three major phases as shown in the MLOps workflow:
+- 🧪 **Jenkins** for Continuous Integration (CI)  
+- 🔁 **ArgoCD** for GitOps-based Continuous Deployment (CD)  
+- 🌐 **GitHub Webhooks** for automatic trigger on every push  
+
+Together, these tools enable true MLOps automation — from commit to deployment — using Docker and Kubernetes.
 
 ---
 
 ### ⚙️ 1. Development & Experimentation
 
-- **Project Setup**: Organize codebase and folder structure
-- **Notebook Testing**: Validate logic using Jupyter notebooks
-- **Data Processing**: Handle preprocessing, encoding, scaling
-- **Model Training**: Train and evaluate ML model
+> The ML workflow starts with experimentation, model building, and evaluation — all locally.
+
+- 🧱 **Project Setup**: Organize modular folder and script structure  
+- 🧪 **Notebook Testing**: Validate core logic in Jupyter  
+- 🧹 **Data Processing**: Preprocess raw data (encoding, scaling, splitting)  
+- 🧠 **Model Training**: Train Logistic Regression and evaluate metrics  
 
 ---
 
 ### 📦 2. Packaging & Infrastructure
 
-- **User App Building**: Develop Flask app for prediction
-- **Dockerfile & K8s Manifests**: Create deployment-ready infrastructure files
-- **Data & Code Versioning**: Store models and preprocessing artifacts in versioned directories
-- **VM Instance Setup**: Use GCP VM with Minikube to simulate production environment
+> The system is containerized and made deployment-ready.
+
+- 💻 **User App Building**: Develop Flask web UI for predictions  
+- 🐳 **Dockerization**: Define `Dockerfile` to containerize the app  
+- 📄 **Kubernetes Manifests**: Write `deployment.yml` and `service.yml`  
+- 📁 **Versioning**: Store models and scaler as `.pkl` inside `artifacts/`  
+- ☁️ **VM Setup**: Use **GCP VM** (Ubuntu 20.04) with Minikube + kubectl  
 
 ---
 
 ### 🔄 3. CI/CD Pipeline Automation
 
-- **Jenkins Setup**: Jenkins is installed and configured on the VM
-- **GitHub ↔ Jenkins Integration**: GitHub Webhooks trigger Jenkins on every push
-- **CI Pipeline**: Jenkins runs `Jenkinsfile` to build Docker image and run tests
-- **ArgoCD Setup**: ArgoCD is installed on the cluster for GitOps-based deployment
-- **CD Code & Automation**: ArgoCD monitors Git repo for Kubernetes manifest changes
-- **Production Deployment**: New app version is automatically deployed to K8s via ArgoCD
-  
-> ✅ This setup ensures that **every code push** is automatically tested, containerized, and deployed to the cluster within seconds — achieving true MLOps automation.
+> The complete automation is triggered via GitHub push and executed in Jenkins and ArgoCD.
+
+- 🔧 **Jenkins Setup**: Installed and configured on GCP VM  
+- 🔗 **GitHub ↔ Jenkins Integration**: GitHub Webhooks trigger CI on push  
+- 🛠️ **CI Pipeline** (`Jenkinsfile`):  
+  - Pull latest code  
+  - Build Docker image  
+  - Run lint/test scripts  
+  - Push image to DockerHub/GCR  
+- 🚀 **ArgoCD Setup**: Installed in Kubernetes cluster via Minikube  
+- 🔁 **CD Process**:  
+  - ArgoCD monitors Git for manifest changes  
+  - On detecting a new image or config update, it syncs automatically  
+  - App is deployed to Kubernetes within seconds  
+
+---
+
+### 🔔 CI/CD Trigger Summary
+
+> ✅ **Trigger:** A `git push` to the `main` branch activates the Jenkins CI pipeline via webhook.  
+> 🔁 **Deployment:** Updated Kubernetes manifests are pulled and deployed by ArgoCD automatically.
+
+---
 ---
 ## 📌 Future Improvements
 
