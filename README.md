@@ -78,3 +78,67 @@ EffiSense integrates a modern MLOps toolchain combining machine learning, web ap
 | **Scripting & Config** | YAML, Bash                                             |
 
 ---
+## 📦 Installation & Setup
+
+### 🔧 Local Development
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/aimldinesh/EffiSense.git
+cd EffiSense
+
+# 2. (Optional) Create a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the Flask app
+python app.py
+# Then open http://localhost:5000 in your browser.
+```
+---
+## 🚀 CI/CD Pipeline
+
+EffiSense uses a robust CI/CD pipeline to automate the build, test, and deployment process using **Jenkins** and **ArgoCD**.
+
+The pipeline is divided into three major phases as shown in the MLOps workflow:
+
+---
+
+### ⚙️ 1. Development & Experimentation
+
+- **Project Setup**: Organize codebase and folder structure
+- **Notebook Testing**: Validate logic using Jupyter notebooks
+- **Data Processing**: Handle preprocessing, encoding, scaling
+- **Model Training**: Train and evaluate ML model
+
+---
+
+### 📦 2. Packaging & Infrastructure
+
+- **User App Building**: Develop Flask app for prediction
+- **Dockerfile & K8s Manifests**: Create deployment-ready infrastructure files
+- **Data & Code Versioning**: Store models and preprocessing artifacts in versioned directories
+- **VM Instance Setup**: Use GCP VM with Minikube to simulate production environment
+
+---
+
+### 🔄 3. CI/CD Pipeline Automation
+
+- **Jenkins Setup**: Jenkins is installed and configured on the VM
+- **GitHub ↔ Jenkins Integration**: GitHub Webhooks trigger Jenkins on every push
+- **CI Pipeline**: Jenkins runs `Jenkinsfile` to build Docker image and run tests
+- **ArgoCD Setup**: ArgoCD is installed on the cluster for GitOps-based deployment
+- **CD Code & Automation**: ArgoCD monitors Git repo for Kubernetes manifest changes
+- **Production Deployment**: New app version is automatically deployed to K8s via ArgoCD
+  
+> ✅ This setup ensures that **every code push** is automatically tested, containerized, and deployed to the cluster within seconds — achieving true MLOps automation.
+---
+## 📁 Artifacts
+
+EffiSense generates and stores multiple artifacts during the MLOps lifecycle:
+
+
+
