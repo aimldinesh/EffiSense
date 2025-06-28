@@ -97,25 +97,6 @@ EffiSense integrates a modern MLOps toolchain combining machine learning, web ap
 | **Scripting & Config** | YAML, Bash                                             |
 
 ---
-## 📊 Data Information
-
-The dataset used for training EffiSense is sourced from the **[Intelligent Manufacturing Process Data](https://www.kaggle.com/datasets)**.
-
-### 🧾 Features Include:
-- `Type`: Machine type (categorical)
-- `Air temperature [K]`
-- `Process temperature [K]`
-- `Rotational speed [rpm]`
-- `Torque [Nm]`
-- `Tool wear [min]`
-- `Failure Type`: Encoded into efficiency status (`High`, `Medium`, `Low`)
-
-### 🎯 Target:
-- `Efficiency Label`: Multi-class label derived from machine performance and failure conditions.
-
-> Raw data is stored in: `artifacts/raw/data.csv`
-
----
 ## 📦 Installation & Setup
 
 ### 🔧 Local Development
@@ -147,62 +128,63 @@ It is designed to support research in areas such as **predictive maintenance**, 
 
 ### 📁 Data Source
 
-This is a simulated dataset representing intelligent manufacturing systems, originally hosted on **Kaggle** (notably by Ziya). It mimics real-world industrial sensor streams and network metrics for research and development use.
+This is a simulated dataset representing intelligent manufacturing systems, originally hosted on **Kaggle** (by Ziya). It mimics real-world industrial sensor streams and network metrics for research and development use.
+
+> 🔗 [Kaggle Dataset Link](https://www.kaggle.com/datasets/ziya07/intelligent-manufacturing-dataset)
 
 ---
 
 ### 🧾 Feature Overview
 
-Each row represents a real-time snapshot of machine operations and production metrics. Below is a summary of key features:
+Each row represents a real-time snapshot of machine operations and production metrics. Below is a categorized summary of the key features:
 
-| Feature                         | Description                                                       | Type        | Unit / Typical Range      |
-|---------------------------------|-------------------------------------------------------------------|-------------|---------------------------|
-| `Timestamp`                    | Date and time of data recording                                   | Datetime    | `YYYY-MM-DD HH:MM:SS`     |
-| `Machine_ID`                   | Unique machine identifier                                         | Integer     | 1–50                      |
-| `Operation_Mode`              | Current machine status (`Idle`, `Active`, etc.)                   | Categorical | -                         |
+| Feature                         | Description                                                       | Type        | Unit / Typical Range       |
+|---------------------------------|-------------------------------------------------------------------|-------------|----------------------------|
+| `Timestamp`                     | Date and time of data recording                                   | Datetime    | `YYYY-MM-DD HH:MM:SS`      |
+| `Machine_ID`                    | Unique identifier for each machine                                | Integer     | 1–50                       |
+| `Operation_Mode`                | Current machine state (`Idle`, `Active`, etc.)                    | Categorical | -                          |
 
-**Industrial IoT Sensor Data:**
+#### 🔧 Industrial IoT Sensor Data
 
-| `Temperature_C`                | Machine temperature                                               | Float       | °C                         |
-| `Vibration_Hz`                 | Detected vibration level                                          | Float       | Hz                         |
-| `Power_Consumption_kW`         | Electrical power consumption                                      | Float       | kW                         |
+| Feature               | Description                                | Type    | Unit         |
+|----------------------|--------------------------------------------|---------|--------------|
+| `Temperature_C`       | Machine operating temperature              | Float   | °C           |
+| `Vibration_Hz`        | Vibration frequency                        | Float   | Hz           |
+| `Power_Consumption_kW`| Power consumed by the machine              | Float   | kW           |
 
-**6G Network Performance Metrics:**
+#### 🌐 6G Network Performance Metrics
 
-| `Network_Latency_ms`           | Delay in data transmission                                        | Float       | ms                         |
-| `Packet_Loss_%`                | Lost data packets percentage                                      | Float       | %                          |
+| Feature              | Description                                | Type    | Unit         |
+|---------------------|--------------------------------------------|---------|--------------|
+| `Network_Latency_ms` | Network delay for data transfer            | Float   | ms           |
+| `Packet_Loss_%`      | Percentage of lost network packets         | Float   | %            |
 
-**Production & Quality Indicators:**
+#### 🏭 Production & Quality Control Metrics
 
-| `Quality_Control_Defect_Rate_%`| Product defect rate                                               | Float       | %                          |
-| `Production_Speed_units_per_hr`| Production speed                                                  | Float       | units/hour                 |
-| `Predictive_Maintenance_Score` | Maintenance urgency score                                         | Float       | 0–1                        |
-| `Error_Rate_%`                 | General production error rate                                     | Float       | %                          |
+| Feature                        | Description                          | Type    | Unit         |
+|--------------------------------|--------------------------------------|---------|--------------|
+| `Quality_Control_Defect_Rate_%`| Defective product rate               | Float   | %            |
+| `Production_Speed_units_per_hr`| Units produced per hour              | Float   | units/hr     |
+| `Predictive_Maintenance_Score` | Maintenance urgency score (0 to 1)   | Float   | -            |
+| `Error_Rate_%`                 | Overall production error rate        | Float   | %            |
 
-**🔚 Target Variable:**
+#### 🎯 Target Variable
 
-| `Efficiency_Status`            | Efficiency label (`High`, `Medium`, `Low`) — **Target for ML**    | Categorical | -                         |
+| Target Feature       | Description                                          | Type        |
+|----------------------|------------------------------------------------------|-------------|
+| `Efficiency_Status`  | Machine efficiency label: `High`, `Medium`, `Low`   | Categorical |
 
 ---
 
 ### 🔍 Potential Use Cases
 
-- **Predictive Maintenance** — Forecasting when machines need servicing
-- **Real-time Anomaly Detection** — Spotting operational faults instantly
-- **Quality Control** — Reducing defective product output
-- **Performance Optimization** — Boosting machine speed or energy efficiency
-- **Network Impact Analysis** — Studying how latency affects production
-- **Root Cause Analysis** — Tracing inefficiencies back to their source
-- **6G-Aware Applications** — Designing future-proof, real-time control systems
-
----
-
-### 🙏 Acknowledgements
-
-This dataset is a simulated representation designed for research.  
-Please acknowledge the original creator (**Ziya on Kaggle**) if used in publications or production.
-
-> 🔗 [Kaggle Dataset Link ](https://www.kaggle.com/datasets/ziya07/intelligent-manufacturing-dataset)
+- 🔧 **Predictive Maintenance** — Anticipate machine failures or service needs
+- 🧪 **Real-time Anomaly Detection** — Spot unusual operational behavior
+- ✅ **Quality Control** — Minimize defect rates in manufacturing
+- ⚡ **Performance Optimization** — Maximize throughput and energy efficiency
+- 🌐 **Network Impact Analysis** — Assess 6G network influence on production
+- 🔎 **Root Cause Analysis** — Identify sources of inefficiency or failure
+- 🏭 **6G-Aware Smart Factory Systems** — Build future-ready, latency-sensitive automation
 
 ---
 ## 🤖 Model Details
