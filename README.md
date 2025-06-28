@@ -17,11 +17,19 @@ It features a fully automated CI/CD setup using **Jenkins**, **ArgoCD**, **Docke
 - [🔁 Project Workflow](#-project-workflow)
 - [🛠️ Tech Stack](#-tech-stack)
 - [📦 Installation & Setup](#-installation--setup)
+- [📊 Dataset Information](#-dataset-information)
+  - [📁 Data Source](#-data-source)
+  - [🧾 Feature Overview](#-feature-overview)
+  - [🔍 Potential Use Cases](#-potential-use-cases)
 - [🤖 Model Details](#-model-details)
 - [🚀 CI/CD Pipeline](#-cicd-pipeline)
+  - [⚙️ 1. Development & Experimentation](#️-1-development--experimentation)
+  - [📦 2. Packaging & Infrastructure](#-2-packaging--infrastructure)
+  - [🔄 3. CICD Pipeline Automation](#-3-cicd-pipeline-automation)
 - [📌 Future Improvements](#-future-improvements)
 - [🙌 Author](#-author)
 - [🤝 Contributing](#-contributing)
+
 
 ---
 
