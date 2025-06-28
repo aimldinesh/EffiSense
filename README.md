@@ -383,3 +383,5 @@ A visual overview of EffiSense in action — from CI/CD to deployment to predict
 > 📊 The app predicts machine efficiency in real-time using the trained model.  
 > ⚙️ Hosted inside a container, deployed via ArgoCD, and running in the Kubernetes cluster.
 
+# 📄 License
+This project is licensed under the MIT License – see the LICENSE file for details.
