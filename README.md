@@ -383,19 +383,3 @@ A visual overview of EffiSense in action — from CI/CD to deployment to predict
 > 📊 The app predicts machine efficiency in real-time using the trained model.  
 > ⚙️ Hosted inside a container, deployed via ArgoCD, and running in the Kubernetes cluster.
 
----
-## 🙌 Author
-
-**Dinesh Kumar**  
-- 🧑‍💻 [GitHub](https://github.com/aimldinesh)  
-- 📝 [Medium](https://medium.com/@aimldinesh) 
-- 📫 Email: 
-
-> If you found this project useful or learned something from it, feel free to ⭐ the repo and connect!
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!  
-
