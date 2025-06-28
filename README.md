@@ -59,3 +59,22 @@ flowchart TB
     classDef stage fill:#E8F7FF,stroke:#0366D6,stroke-width:2px;
     class A,B,C,D,E,F,G,H,I,J,K,L,M,N stage;
 ```
+
+---
+## 🛠️ Tech Stack
+
+EffiSense integrates a modern MLOps toolchain combining machine learning, web app development, containerization, orchestration, and CI/CD automation.
+
+| Layer              | Tools & Technologies                                      |
+|--------------------|-----------------------------------------------------------|
+| **Programming**     | Python 3.10                                               |
+| **ML Libraries**    | scikit-learn, pandas, numpy, joblib                      |
+| **Web Framework**   | Flask (with HTML & CSS)                                  |
+| **Containerization**| Docker                                                   |
+| **Orchestration**   | Kubernetes (Minikube for local)                          |
+| **CI/CD**           | Jenkins, GitHub Webhooks, ArgoCD                         |
+| **Infrastructure**  | GCP VM (Ubuntu 20.04, Minikube, Docker, kubectl)        |
+| **Version Control** | Git + GitHub                                              |
+| **Scripting & Config** | YAML, Bash                                             |
+
+---
