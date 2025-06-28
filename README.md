@@ -232,8 +232,8 @@ Here are a few planned enhancements and stretch goals to take EffiSense to the n
 
 **Dinesh Kumar**  
 - 🧑‍💻 [GitHub](https://github.com/aimldinesh)  
-- 📝 [Medium](https://medium.com/@aimldinesh)  
-- 📫 Email: aimldinesh@gmail.com
+- 📝 [Medium](https://medium.com/@aimldinesh) 
+- 📫 Email: 
 
 > If you found this project useful or learned something from it, feel free to ⭐ the repo and connect!
 
@@ -242,6 +242,4 @@ Here are a few planned enhancements and stretch goals to take EffiSense to the n
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!  
-Feel free to `fork` the repository and submit a `pull request`.
-
 
