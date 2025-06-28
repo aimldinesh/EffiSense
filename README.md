@@ -137,6 +137,74 @@ python app.py
 # Then open http://localhost:5000 in your browser.
 ```
 ---
+## 📊 Dataset Information
+
+This dataset provides a comprehensive simulation of data from an intelligent manufacturing environment, encompassing industrial IoT sensor readings, operational modes, 6G network performance metrics, and various production and quality control indicators.
+
+It is designed to support research in areas such as **predictive maintenance**, **quality control**, **resource optimization**, and **real-time anomaly detection** within Industry 4.0 and 6G-enabled smart factories.
+
+---
+
+### 📁 Data Source
+
+This is a simulated dataset representing intelligent manufacturing systems, originally hosted on **Kaggle** (notably by Ziya). It mimics real-world industrial sensor streams and network metrics for research and development use.
+
+---
+
+### 🧾 Feature Overview
+
+Each row represents a real-time snapshot of machine operations and production metrics. Below is a summary of key features:
+
+| Feature                         | Description                                                       | Type        | Unit / Typical Range      |
+|---------------------------------|-------------------------------------------------------------------|-------------|---------------------------|
+| `Timestamp`                    | Date and time of data recording                                   | Datetime    | `YYYY-MM-DD HH:MM:SS`     |
+| `Machine_ID`                   | Unique machine identifier                                         | Integer     | 1–50                      |
+| `Operation_Mode`              | Current machine status (`Idle`, `Active`, etc.)                   | Categorical | -                         |
+
+**Industrial IoT Sensor Data:**
+
+| `Temperature_C`                | Machine temperature                                               | Float       | °C                         |
+| `Vibration_Hz`                 | Detected vibration level                                          | Float       | Hz                         |
+| `Power_Consumption_kW`         | Electrical power consumption                                      | Float       | kW                         |
+
+**6G Network Performance Metrics:**
+
+| `Network_Latency_ms`           | Delay in data transmission                                        | Float       | ms                         |
+| `Packet_Loss_%`                | Lost data packets percentage                                      | Float       | %                          |
+
+**Production & Quality Indicators:**
+
+| `Quality_Control_Defect_Rate_%`| Product defect rate                                               | Float       | %                          |
+| `Production_Speed_units_per_hr`| Production speed                                                  | Float       | units/hour                 |
+| `Predictive_Maintenance_Score` | Maintenance urgency score                                         | Float       | 0–1                        |
+| `Error_Rate_%`                 | General production error rate                                     | Float       | %                          |
+
+**🔚 Target Variable:**
+
+| `Efficiency_Status`            | Efficiency label (`High`, `Medium`, `Low`) — **Target for ML**    | Categorical | -                         |
+
+---
+
+### 🔍 Potential Use Cases
+
+- **Predictive Maintenance** — Forecasting when machines need servicing
+- **Real-time Anomaly Detection** — Spotting operational faults instantly
+- **Quality Control** — Reducing defective product output
+- **Performance Optimization** — Boosting machine speed or energy efficiency
+- **Network Impact Analysis** — Studying how latency affects production
+- **Root Cause Analysis** — Tracing inefficiencies back to their source
+- **6G-Aware Applications** — Designing future-proof, real-time control systems
+
+---
+
+### 🙏 Acknowledgements
+
+This dataset is a simulated representation designed for research.  
+Please acknowledge the original creator (**Ziya on Kaggle**) if used in publications or production.
+
+> 🔗 [Kaggle Dataset Link ](https://www.kaggle.com/datasets/ziya07/intelligent-manufacturing-dataset)
+
+---
 ## 🤖 Model Details
 
 EffiSense applies a supervised ML model to classify machine efficiency as **High**, **Medium**, or **Low** using preprocessed industrial data.
