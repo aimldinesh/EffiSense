@@ -36,6 +36,7 @@ It features a fully automated CI/CD setup using **Jenkins**, **ArgoCD**, **Docke
   - [🔔 CI/CD Trigger Summary](#cicd-trigger-summary)
 - [📌 Future Improvements](#future-improvements)
 - [🖼️ Output Screenshots](#output-screenshots)
+- [🔧 Infrastructure Setup](infra_setup.md)
 - [🙌 Author](#author)
 - [🤝 Contributing](#contributing)
 
