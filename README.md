@@ -139,7 +139,6 @@ This dataset provides a comprehensive simulation of data from an intelligent man
 
 It is designed to support research in areas such as **predictive maintenance**, **quality control**, **resource optimization**, and **real-time anomaly detection** within Industry 4.0 and 6G-enabled smart factories.
 
----
 
 ### 📁 Data Source
 
@@ -147,7 +146,6 @@ This is a simulated dataset representing intelligent manufacturing systems, orig
 
 > 🔗 [Kaggle Dataset Link](https://www.kaggle.com/datasets/ziya07/intelligent-manufacturing-dataset)
 
----
 
 ### 🧾 Feature Overview
 
@@ -266,7 +264,6 @@ EffiSense features a fully automated **CI/CD pipeline** that ensures fast, relia
 
 Together, these tools enable true MLOps automation — from commit to deployment — using Docker and Kubernetes.
 
----
 
 ### ⚙️ 1. Development & Experimentation
 
@@ -277,7 +274,6 @@ Together, these tools enable true MLOps automation — from commit to deployment
 - 🧹 **Data Processing**: Preprocess raw data (encoding, scaling, splitting)  
 - 🧠 **Model Training**: Train Logistic Regression and evaluate metrics  
 
----
 
 ### 📦 2. Packaging & Infrastructure
 
@@ -289,7 +285,6 @@ Together, these tools enable true MLOps automation — from commit to deployment
 - 📁 **Versioning**: Store models and scaler as `.pkl` inside `artifacts/`  
 - ☁️ **VM Setup**: Use **GCP VM** (Ubuntu 20.04) with Minikube + kubectl  
 
----
 
 ### 🔄 3. CI/CD Pipeline Automation
 
@@ -308,14 +303,12 @@ Together, these tools enable true MLOps automation — from commit to deployment
   - On detecting a new image or config update, it syncs automatically  
   - App is deployed to Kubernetes within seconds  
 
----
 
 ### 🔔 CI/CD Trigger Summary
 
 > ✅ **Trigger:** A `git push` to the `main` branch activates the Jenkins CI pipeline via webhook.  
 > 🔁 **Deployment:** Updated Kubernetes manifests are pulled and deployed by ArgoCD automatically.
 
----
 ---
 ## 📌 Future Improvements
 
@@ -327,6 +320,47 @@ Here are a few planned enhancements and stretch goals to take EffiSense to the n
 - 📊 **Analytics Dashboard**: Build a Streamlit-based dashboard to visualize efficiency trends
 - 🔐 **Authentication**: Add user login and access control to the web interface
 - ☁️ **Cloud-Native Deployment**: Move from local Minikube to managed GKE/EKS cluster
+
+---
+
+## 📸 Output Screenshots
+
+### 🧪 Jenkins – CI Pipeline Execution
+
+#### ✅ Build Started
+![Jenkins Build Start](https://github.com/aimldinesh/EffiSense/blob/main/images/jenkin_build_start.PNG)
+
+#### ✅ Build Success
+![Jenkins Build Success](https://github.com/aimldinesh/EffiSense/blob/main/images/jenkins_build_success.PNG)
+
+> 🔄 Jenkins triggers CI pipeline on GitHub push, builds Docker image, runs tests, and pushes to registry.
+
+---
+
+### 🚀 ArgoCD – GitOps Deployment
+
+![ArgoCD Dashboard](https://github.com/aimldinesh/EffiSense/blob/main/images/argocd_dashboard.PNG)
+
+> 📦 ArgoCD monitors Kubernetes manifests in GitHub and auto-syncs changes to the cluster.  
+> ✅ Application is **Synced** and **Healthy** with live updates.
+
+
+### ☁️ Deployment via K8s
+
+![App Deployed via K8s](https://github.com/aimldinesh/EffiSense/blob/main/images/mlops_app_running.PNG)
+
+> 📌  the image shows a Flask development server running inside a Kubernetes pod, with debug mode enabled and accessible via its internal IP and localhost on port 5000.
+
+
+### 🖥️ Web Application – Prediction UI
+
+![Flask Web App](https://github.com/aimldinesh/EffiSense/blob/main/images/deploy_app.PNG)
+
+> 🧠 This image showcases the **Flask web interface** of the deployed MLOps application.  
+> 📊 Users can select input parameters (e.g., machine sensor values, network metrics) through dropdowns and input fields.  
+> 🚀 On submission, the app makes a real-time prediction on **Machine Efficiency** using the trained model.  
+> 🌐 The app is containerized, deployed on **Kubernetes**, and accessible via the assigned service IP.
+
 
 ---
 ## 🙌 Author
