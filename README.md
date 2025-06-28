@@ -322,18 +322,20 @@ Here are a few planned enhancements and stretch goals to take EffiSense to the n
 - ☁️ **Cloud-Native Deployment**: Move from local Minikube to managed GKE/EKS cluster
 
 ---
+## 🖼️ Output Screenshots
 
-## 📸 Output Screenshots
+A visual overview of EffiSense in action — from CI/CD to deployment to prediction UI.
 
-### 🧪 Jenkins – CI Pipeline Execution
+---
 
-#### ✅ Build Started
-![Jenkins Build Start](https://github.com/aimldinesh/EffiSense/blob/main/images/jenkin_build_start.PNG)
+### ✅ Jenkins – Build Triggered and Completed
 
-#### ✅ Build Success
-![Jenkins Build Success](https://github.com/aimldinesh/EffiSense/blob/main/images/jenkins_build_success.PNG)
+| Jenkins Build Started | Jenkins Build Successful |
+|-----------------------|--------------------------|
+| ![Build Start](https://github.com/aimldinesh/EffiSense/blob/main/images/jenkin_build_start.PNG) | ![Build Success](https://github.com/aimldinesh/EffiSense/blob/main/images/jenkins_build_success.PNG) |
 
-> 🔄 Jenkins triggers CI pipeline on GitHub push, builds Docker image, runs tests, and pushes to registry.
+> 🛠️ Jenkins monitors the GitHub repo via Webhooks and automatically starts the build process on each push.  
+> ✅ The pipeline includes testing, Docker image build, and pushing to the container registry.
 
 ---
 
@@ -341,26 +343,28 @@ Here are a few planned enhancements and stretch goals to take EffiSense to the n
 
 ![ArgoCD Dashboard](https://github.com/aimldinesh/EffiSense/blob/main/images/argocd_dashboard.PNG)
 
-> 📦 ArgoCD monitors Kubernetes manifests in GitHub and auto-syncs changes to the cluster.  
-> ✅ Application is **Synced** and **Healthy** with live updates.
+> 📦 ArgoCD continuously watches for changes in the Kubernetes manifests stored in the Git repo.  
+> 🔄 On update, it automatically syncs the desired state with the actual state in the Kubernetes cluster.  
+> 🎯 This enables **automated and declarative deployment** with complete GitOps control.
 
+---
 
-### ☁️ Deployment via K8s
+### 🔍 Kubernetes Pod Logs – Flask App Running
 
-![App Deployed via K8s](https://github.com/aimldinesh/EffiSense/blob/main/images/mlops_app_running.PNG)
+![MLOps App Logs](https://github.com/aimldinesh/EffiSense/blob/main/images/mlops_app_running.PNG)
 
-> 📌  the image shows a Flask development server running inside a Kubernetes pod, with debug mode enabled and accessible via its internal IP and localhost on port 5000.
+> 🧵 This log output confirms that the **Flask app is running inside a Kubernetes pod** with debug mode enabled.  
+> 🌐 It is exposed through a Kubernetes Service and accessible via its internal or external IP.
 
+---
 
 ### 🖥️ Web Application – Prediction UI
 
 ![Flask Web App](https://github.com/aimldinesh/EffiSense/blob/main/images/deploy_app.PNG)
 
-> 🧠 This image showcases the **Flask web interface** of the deployed MLOps application.  
-> 📊 Users can select input parameters (e.g., machine sensor values, network metrics) through dropdowns and input fields.  
-> 🚀 On submission, the app makes a real-time prediction on **Machine Efficiency** using the trained model.  
-> 🌐 The app is containerized, deployed on **Kubernetes**, and accessible via the assigned service IP.
-
+> 🧠 This is the deployed **Flask web interface** where users can input machine metrics.  
+> 📊 The app predicts machine efficiency in real-time using the trained model.  
+> ⚙️ Hosted inside a container, deployed via ArgoCD, and running in the Kubernetes cluster.
 
 ---
 ## 🙌 Author
