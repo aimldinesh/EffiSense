@@ -97,6 +97,25 @@ EffiSense integrates a modern MLOps toolchain combining machine learning, web ap
 | **Scripting & Config** | YAML, Bash                                             |
 
 ---
+## 📊 Data Information
+
+The dataset used for training EffiSense is sourced from the **[Intelligent Manufacturing Process Data](https://www.kaggle.com/datasets)**.
+
+### 🧾 Features Include:
+- `Type`: Machine type (categorical)
+- `Air temperature [K]`
+- `Process temperature [K]`
+- `Rotational speed [rpm]`
+- `Torque [Nm]`
+- `Tool wear [min]`
+- `Failure Type`: Encoded into efficiency status (`High`, `Medium`, `Low`)
+
+### 🎯 Target:
+- `Efficiency Label`: Multi-class label derived from machine performance and failure conditions.
+
+> Raw data is stored in: `artifacts/raw/data.csv`
+
+---
 ## 📦 Installation & Setup
 
 ### 🔧 Local Development
