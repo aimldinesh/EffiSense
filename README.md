@@ -144,9 +144,11 @@ python app.py
 # Then open http://localhost:5000 in your browser.
 
 # 🧪 Optional: Run Model Training Pipeline
-To re-train the model locally and generate new artifacts:
-python pipeline/training_pipeline.py
-This will process the dataset, train the Logistic Regression model, and save updated .pkl files and evaluation metrics inside artifacts/.
+- To re-train the model locally and generate new artifacts:
+
+  python pipeline/training_pipeline.py
+
+- This will process the dataset, train the Logistic Regression model, and save updated .pkl files and evaluation metrics inside artifacts/.
 ```
 ---
 ## 📊 Dataset Information
