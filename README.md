@@ -136,9 +136,17 @@ The pipeline is divided into three major phases as shown in the MLOps workflow:
   
 > ✅ This setup ensures that **every code push** is automatically tested, containerized, and deployed to the cluster within seconds — achieving true MLOps automation.
 ---
-## 📁 Artifacts
+## 📌 Future Improvements
 
-EffiSense generates and stores multiple artifacts during the MLOps lifecycle:
+Here are a few planned enhancements and stretch goals to take EffiSense to the next level:
+
+- 🔍 **Monitoring Integration**: Add Prometheus + Grafana for real-time app and model monitoring
+- 📈 **Model Experiment Tracking**: Integrate MLflow or DVC to track model performance and metadata
+- 🧪 **AutoML Pipeline**: Extend model training to support multiple algorithms + hyperparameter tuning
+- 📊 **Analytics Dashboard**: Build a Streamlit-based dashboard to visualize efficiency trends
+- 🔐 **Authentication**: Add user login and access control to the web interface
+- ☁️ **Cloud-Native Deployment**: Move from local Minikube to managed GKE/EKS cluster
+
 
 
 
