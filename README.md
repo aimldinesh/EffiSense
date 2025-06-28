@@ -1,8 +1,27 @@
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Flask](https://img.shields.io/badge/Flask-Web_App-lightgrey?logo=flask)
+![Docker](https://img.shields.io/badge/Docker-Container-blue?logo=docker)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-blue?logo=kubernetes)
+![CI/CD](https://img.shields.io/badge/CI/CD-Jenkins%20%7C%20ArgoCD-success?logo=githubactions)
+
 ## EffiSense: End-to-End MLOps Pipeline for Machine Efficiency Prediction
 
 EffiSense is a complete MLOps pipeline that predicts the **efficiency status (High | Medium | Low)** of industrial machines using intelligent manufacturing data.
 
 It features a fully automated CI/CD setup using **Jenkins**, **ArgoCD**, **Docker**, **Kubernetes**, and **GitHub Webhooks** for seamless deployment.
+
+---
+## 📚 Table of Contents
+
+- [🏛️ Project Structure](#-project-structure)
+- [🔁 Project Workflow](#-project-workflow)
+- [🛠️ Tech Stack](#-tech-stack)
+- [📦 Installation & Setup](#-installation--setup)
+- [🤖 Model Details](#-model-details)
+- [🚀 CI/CD Pipeline](#-cicd-pipeline)
+- [📌 Future Improvements](#-future-improvements)
+- [🙌 Author](#-author)
+- [🤝 Contributing](#-contributing)
 
 ---
 
@@ -99,6 +118,48 @@ python app.py
 # Then open http://localhost:5000 in your browser.
 ```
 ---
+## 🤖 Model Details
+
+EffiSense applies a supervised ML model to classify machine efficiency as **High**, **Medium**, or **Low** using preprocessed industrial data.
+
+### 🧠 Problem Type
+- Multiclass Classification
+
+### 🧮 ML Pipeline Overview
+
+1. **Data Preprocessing**
+   - Encode categorical features
+   - Scale numeric features using `StandardScaler`
+   - Split dataset into training and test sets (80/20)
+
+2. **Model Training**
+   - Algorithm: **Logistic Regression** (scikit-learn)
+   - Input: Preprocessed `X_train` and `y_train`
+   - Output: `model.pkl` (final trained model)
+
+3. **Model Evaluation**
+   - Evaluated on `X_test`, `y_test`
+   - Metrics: Accuracy, Precision, Recall, F1-score
+   - Results saved to `evaluation_metrics.csv`
+
+### 📁 Model Artifacts
+```
+artifacts/
+├── raw/
+│ └── data.csv # Original dataset
+├── processed/
+│ ├── X_train.pkl # Processed training features
+│ ├── X_test.pkl # Processed testing features
+│ ├── y_train.pkl # Training labels
+│ ├── y_test.pkl # Testing labels
+│ └── scaler.pkl # StandardScaler object
+├── models/
+│ ├── model.pkl # Trained Logistic Regression model
+│ └── evaluation_metrics.csv # Model evaluation metrics (CSV)
+
+```
+---
+
 ## 🚀 CI/CD Pipeline
 
 EffiSense uses a robust CI/CD pipeline to automate the build, test, and deployment process using **Jenkins** and **ArgoCD**.
@@ -147,6 +208,21 @@ Here are a few planned enhancements and stretch goals to take EffiSense to the n
 - 🔐 **Authentication**: Add user login and access control to the web interface
 - ☁️ **Cloud-Native Deployment**: Move from local Minikube to managed GKE/EKS cluster
 
+---
+## 🙌 Author
 
+**Dinesh Kumar**  
+- 🧑‍💻 [GitHub](https://github.com/aimldinesh)  
+- 📝 [Medium](https://medium.com/@aimldinesh)  
+- 📫 Email: aimldinesh@gmail.com
+
+> If you found this project useful or learned something from it, feel free to ⭐ the repo and connect!
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!  
+Feel free to `fork` the repository and submit a `pull request`.
 
 
