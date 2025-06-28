@@ -3,6 +3,9 @@
 ![Docker](https://img.shields.io/badge/Docker-Container-blue?logo=docker)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-blue?logo=kubernetes)
 ![CI/CD](https://img.shields.io/badge/CI/CD-Jenkins%20%7C%20ArgoCD-success?logo=githubactions)
+![Last Commit](https://img.shields.io/github/last-commit/aimldinesh/EffiSense)
+![Stars](https://img.shields.io/github/stars/aimldinesh/EffiSense?style=social)
+
 
 ## EffiSense: End-to-End MLOps Pipeline for Machine Efficiency Prediction
 
@@ -13,24 +16,30 @@ It features a fully automated CI/CD setup using **Jenkins**, **ArgoCD**, **Docke
 ---
 ## 📚 Table of Contents
 
-- [🏛️ Project Structure](#-project-structure)
-- [🔁 Project Workflow](#-project-workflow)
-- [🛠️ Tech Stack](#-tech-stack)
-- [📦 Installation & Setup](#-installation--setup)
-- [📊 Dataset Information](#-dataset-information)
-  - [📁 Data Source](#-data-source)
-  - [🧾 Feature Overview](#-feature-overview)
-  - [🔍 Potential Use Cases](#-potential-use-cases)
-- [🤖 Model Details](#-model-details)
-- [🚀 CI/CD Pipeline](#-cicd-pipeline)
-  - [⚙️ 1. Development & Experimentation](#️-1-development--experimentation)
-  - [📦 2. Packaging & Infrastructure](#-2-packaging--infrastructure)
-  - [🔄 3. CICD Pipeline Automation](#-3-cicd-pipeline-automation)
-- [📌 Future Improvements](#-future-improvements)
-- [🙌 Author](#-author)
-- [🤝 Contributing](#-contributing)
+- [🏛️ Project Structure](#project-structure)
+- [🔁 Project Workflow](#project-workflow)
+- [🛠️ Tech Stack](#tech-stack)
+- [📦 Installation & Setup](#installation--setup)
+- [📊 Dataset Information](#dataset-information)
+  - [📁 Data Source](#data-source)
+  - [🧾 Feature Overview](#feature-overview)
+  - [🔍 Potential Use Cases](#potential-use-cases)
+- [🤖 Model Details](#model-details)
+  - [🧠 Problem Type](#problem-type)
+  - [🧮 ML Pipeline Overview](#ml-pipeline-overview)
+  - [💾 Saved Model Artifacts](#saved-model-artifacts)
+  - [🧪 Sample Evaluation Metrics](#sample-evaluation-metrics)
+- [🚀 CI/CD Pipeline](#cicd-pipeline)
+  - [⚙️ 1. Development & Experimentation](#1-development--experimentation)
+  - [📦 2. Packaging & Infrastructure](#2-packaging--infrastructure)
+  - [🔄 3. CICD Pipeline Automation](#3-cicd-pipeline-automation)
+  - [🔔 CI/CD Trigger Summary](#cicd-trigger-summary)
+- [📌 Future Improvements](#future-improvements)
+- [🖼️ Output Screenshots](#output-screenshots)
+- [🙌 Author](#author)
+- [🤝 Contributing](#contributing)
 
-
+  
 ---
 
 ## 🏛️ Project Structure
@@ -114,23 +123,30 @@ EffiSense integrates a modern MLOps toolchain combining machine learning, web ap
 ---
 ## 📦 Installation & Setup
 
-### 🔧 Local Development
+EffiSense is designed for seamless local testing before deploying to production via CI/CD. Follow the steps below to run everything locally.
+
+### 🔧 Step-by-Step Setup (Local Development)
 
 ```bash
-# 1. Clone the repository
+# 1️⃣ Clone the repository
 git clone https://github.com/aimldinesh/EffiSense.git
 cd EffiSense
 
-# 2. (Optional) Create a virtual environment
+# 2️⃣ (Optional but recommended) Create and activate a virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate         # On Windows: venv\Scripts\activate
 
-# 3. Install dependencies
+# 3️⃣ Install required dependencies
 pip install -r requirements.txt
 
-# 4. Run the Flask app
+# 4️⃣ Run the Flask application
 python app.py
 # Then open http://localhost:5000 in your browser.
+
+# 🧪 Optional: Run Model Training Pipeline
+To re-train the model locally and generate new artifacts:
+python pipeline/training_pipeline.py
+This will process the dataset, train the Logistic Regression model, and save updated .pkl files and evaluation metrics inside artifacts/.
 ```
 ---
 ## 📊 Dataset Information
@@ -241,7 +257,6 @@ artifacts/
 │ └── evaluation_metrics.csv # Model evaluation metrics (CSV)
 
 ```
----
 ### 🧪 Sample Evaluation Metrics
 
 Here are the evaluation metrics of the trained Logistic Regression model on the test dataset:
