@@ -38,7 +38,7 @@ It features a fully automated CI/CD setup using **Jenkins**, **ArgoCD**, **Docke
 - [🖼️ Output Screenshots](#output-screenshots)
 - [🔧 Infrastructure Setup](infra_setup.md)
 - [🙌 Author](#author)
-- [🤝 Contributing](#contributing)
+- [📄 License](#-license)
 ---
 
 ## 🏛️ Project Structure
@@ -389,5 +389,6 @@ A visual overview of EffiSense in action — from CI/CD to deployment to predict
 > 📊 The app predicts machine efficiency in real-time using the trained model.  
 > ⚙️ Hosted inside a container, deployed via ArgoCD, and running in the Kubernetes cluster.
 
-# 📄 License
-This project is licensed under the MIT License – see the LICENSE file for details.
+## 📄 License
+
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
