@@ -38,7 +38,7 @@ It features a fully automated CI/CD setup using **Jenkins**, **ArgoCD**, **Docke
 - [🖼️ Output Screenshots](#output-screenshots)
 - [🔧 Infrastructure Setup](infra_setup.md)
 - [🙌 Author](#author)
-- [🤝 Contributing](#contributing 
+- [🤝 Contributing](#contributing)
 ---
 
 ## 🏛️ Project Structure
