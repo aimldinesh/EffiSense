@@ -79,7 +79,7 @@ EffiSense/
 ## 🔁 Project Workflow
 
 ```mermaid
-%% EffiSense MLOps Workflow (3-row layout)
+%% EffiSense MLOps Workflow (Dark Mode Friendly)
 flowchart TB
     %% ──────────────── 1️⃣ Development & Experimentation ────────────────
     subgraph DEV [Development & Experiment]
@@ -99,9 +99,16 @@ flowchart TB
         H --> I[Jenkins Setup] --> J[GitHub ↔ Jenkins] --> K[CI Pipeline] --> L[ArgoCD Install & Config] --> M[CD Code & Automation] --> N[ArgoCD Deployment]
     end
 
-    %% Optional style tweaks (colors, borders)
-    classDef stage fill:#E8F7FF,stroke:#0366D6,stroke-width:2px;
-    class A,B,C,D,E,F,G,H,I,J,K,L,M,N stage;
+    %% ──────────────── Dark Mode-Friendly Styles ────────────────
+    classDef dev fill:#2B2B76,stroke:#5C6BC0,color:#ffffff,stroke-width:2px;   %% Indigo
+    classDef pkg fill:#004D40,stroke:#26A69A,color:#ffffff,stroke-width:2px;  %% Teal
+    classDef cicd fill:#37474F,stroke:#90A4AE,color:#ffffff,stroke-width:2px; %% Gray-Blue
+
+    %% ──────────────── Assign Classes ────────────────
+    class A,B,C,D dev;
+    class E,F,G,H pkg;
+    class I,J,K,L,M,N cicd;
+
 ```
 
 ---
