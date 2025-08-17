@@ -1,3 +1,5 @@
+<div align="center">
+
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
 ![Flask](https://img.shields.io/badge/Flask-Web_App-lightgrey?logo=flask)
 ![Docker](https://img.shields.io/badge/Docker-Container-blue?logo=docker)
@@ -5,6 +7,8 @@
 ![CI/CD](https://img.shields.io/badge/CI/CD-Jenkins%20%7C%20ArgoCD-success?logo=githubactions)
 ![Last Commit](https://img.shields.io/github/last-commit/aimldinesh/EffiSense)
 ![Stars](https://img.shields.io/github/stars/aimldinesh/EffiSense?style=social)
+
+</div>
 
 
 ## EffiSense: End-to-End MLOps Pipeline for Machine Efficiency Prediction
