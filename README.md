@@ -11,11 +11,15 @@
 </div>
 
 
-## EffiSense: End-to-End MLOps Pipeline for Machine Efficiency Prediction
+<div align="center">
 
-EffiSense is a complete MLOps pipeline that predicts the **efficiency status (High | Medium | Low)** of industrial machines using intelligent manufacturing data.
+## 🚀 EffiSense: End-to-End MLOps Pipeline for Machine Efficiency Prediction  
 
-It features a fully automated CI/CD setup using **Jenkins**, **ArgoCD**, **Docker**, **Kubernetes**, and **GitHub Webhooks** for seamless deployment.
+EffiSense is a complete MLOps pipeline that predicts the **efficiency status (High | Medium | Low)** of industrial machines using intelligent manufacturing data.  
+
+It features a fully automated CI/CD setup using **Jenkins**, **ArgoCD**, **Docker**, **Kubernetes**, and **GitHub Webhooks** for seamless deployment.  
+
+</div>
 
 ---
 ## 📚 Table of Contents
