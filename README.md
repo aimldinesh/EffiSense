@@ -151,7 +151,7 @@ python -m venv venv
 source venv/bin/activate         # On Windows: venv\Scripts\activate
 
 # 3️⃣ Install required dependencies
-pip install -r requirements.txt
+pip install -e.                  or # pip install -r requirements.txt
 
 # 4️⃣ Run the Flask application
 python app.py
