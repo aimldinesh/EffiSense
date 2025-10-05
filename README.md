@@ -345,7 +345,7 @@ Together, these tools enable true MLOps automation — from commit to deployment
 
 Here are a few planned enhancements and stretch goals to take EffiSense to the next level:
 
-- 🔍 **Monitoring Integration**: Add Prometheus + Grafana for real-time app and model monitoring
+- 🔍 **Monitoring Integration**: Add Prometheus + Grafana for real-time app and model monitoring .
 - 📈 **Model Experiment Tracking**: Integrate MLflow or DVC to track model performance and metadata
 - 🧪 **AutoML Pipeline**: Extend model training to support multiple algorithms + hyperparameter tuning
 - 📊 **Analytics Dashboard**: Build a Streamlit-based dashboard to visualize efficiency trends
