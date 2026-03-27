@@ -118,6 +118,7 @@ flowchart TB
 ```
 
 ---
+
 ## 🛠️ Tech Stack
 
 EffiSense integrates a modern MLOps toolchain combining machine learning, web app development, containerization, orchestration, and CI/CD automation.
